@@ -35,6 +35,7 @@
             label1 = new Label();
             Zemin = new PictureBox();
             GameTimer = new System.Windows.Forms.Timer(components);
+            lblRestart = new Label();
             ((System.ComponentModel.ISupportInitialize)Bird).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BoruUst).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BoruAlt).BeginInit();
@@ -99,12 +100,25 @@
             GameTimer.Interval = 20;
             GameTimer.Tick += GameTimer_Tick;
             // 
+            // lblRestart
+            // 
+            lblRestart.AutoSize = true;
+            lblRestart.BackColor = Color.OrangeRed;
+            lblRestart.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblRestart.Location = new Point(183, 234);
+            lblRestart.Name = "lblRestart";
+            lblRestart.Size = new Size(437, 47);
+            lblRestart.TabIndex = 5;
+            lblRestart.Text = "Yeniden Başlamak için 'R'";
+            lblRestart.Visible = false;
+            // 
             // FlappyBirdForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(784, 561);
+            Controls.Add(lblRestart);
             Controls.Add(Zemin);
             Controls.Add(label1);
             Controls.Add(BoruAlt);
@@ -131,5 +145,6 @@
         private Label label1;
         private PictureBox Zemin;
         private System.Windows.Forms.Timer GameTimer;
+        private Label lblRestart;
     }
 }

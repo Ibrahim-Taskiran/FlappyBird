@@ -26,12 +26,13 @@ namespace FlappyBird
                 BoruUst.Left = 800;
                 score++;
             }
-
-            if (BoruAlt.Left < -180)
+            if (BoruAlt.Left < -150)
             {
-                BoruAlt.Left = 950;
-                score++;
+                BoruAlt.Left = 850;
+                
             }
+
+
 
             if (Bird.Bounds.IntersectsWith(BoruUst.Bounds) ||
                 Bird.Bounds.IntersectsWith(BoruAlt.Bounds) ||
@@ -46,6 +47,7 @@ namespace FlappyBird
         {
             GameTimer.Stop();
             label1.Text = "Game Over !";
+            lblRestart.Visible = true;
         }
 
         private void game_Down(object sender, KeyEventArgs e)
@@ -54,13 +56,21 @@ namespace FlappyBird
             {
                 gravity = -20;
             }
+            if (e.KeyCode == Keys.R)
+            {
+                Application.Restart();
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                
+            }
         }
 
         private void game_Up(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
             {
-                gravity = 15;
+                gravity = 10;
             }
 
         }
